@@ -1,7 +1,8 @@
-import { memo, useCallback } from "react";
-import { APPLICATIONS_GOAL_COUNT } from "@/shared/constants/applications";
-import { useGeneratedApplicationsCount } from "@/shared/hooks/useGeneratedApplicationsCount";
-import { CheckIcon } from "@/assets/icons";
+import { memo } from 'react';
+import { CheckIcon } from '@/assets/icons';
+import { ProgressDots } from '@/shared/components/ProgressDots';
+import { APPLICATIONS_GOAL_COUNT } from '@/shared/constants/applications';
+import { useGeneratedApplicationsCount } from '@/shared/hooks/useGeneratedApplicationsCount';
 
 export const ApplicationsProgress = memo(() => {
   const { applicationsCount, completedCount, isGoalReached } = useGeneratedApplicationsCount();
@@ -9,20 +10,6 @@ export const ApplicationsProgress = memo(() => {
   const progressText = isGoalReached
     ? `${applicationsCount} applications generated`
     : `${completedCount}/${APPLICATIONS_GOAL_COUNT} applications generated`;
-  
-  const generateDots = useCallback(() => (
-    <div
-        aria-hidden='true'
-        className='flex shrink-0 items-center gap-1'
-        data-testid='header-progress-dots'
-      >
-      {Array.from({ length: APPLICATIONS_GOAL_COUNT }, (_, index) => {
-        const className = index + 1 > completedCount ? 'size-2 rounded bg-neutral-300/24' : 'size-2 rounded bg-neutral-300';
-        
-        return <span key={index} className={className} />;
-      })}
-    </div>
-  ), [completedCount]);
 
   return (
     <div>
@@ -30,7 +17,19 @@ export const ApplicationsProgress = memo(() => {
         <p className='whitespace-nowrap text-center text-m leading-7 text-neutral-100'>
           {progressText}
         </p>
-        {isGoalReached ? <CheckIcon className='size-7' /> : generateDots()}
+        {isGoalReached ? (
+          <CheckIcon className='size-7' />
+        ) : (
+          <div
+            aria-hidden='true'
+            className='flex shrink-0 items-center gap-1'
+          >
+            <ProgressDots
+              completedCount={completedCount}
+              totalCount={APPLICATIONS_GOAL_COUNT}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

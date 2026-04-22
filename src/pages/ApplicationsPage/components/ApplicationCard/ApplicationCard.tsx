@@ -7,11 +7,11 @@ import { applicationsIndexedDbStorage } from '@/shared/services/ApplicationsInde
 import type { MouseEventHandler } from 'react';
 import type { IGeneratedApplication } from '@/shared/types';
 
-interface IApplicationCardProps {
+interface IProps {
   application: IGeneratedApplication;
 }
 
-export const ApplicationCard = ({ application }: IApplicationCardProps) => {
+export const ApplicationCard = ({ application }: IProps) => {
   const stopCardNavigation: MouseEventHandler<HTMLButtonElement> = event => {
     event.preventDefault();
     event.stopPropagation();
@@ -27,7 +27,7 @@ export const ApplicationCard = ({ application }: IApplicationCardProps) => {
 
       await applicationsIndexedDbStorage.deleteById(application.id);
     } catch {
-      alert('Something went wront');
+      alert('Something went wrong');
     }
   };
 

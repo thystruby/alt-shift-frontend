@@ -2,12 +2,12 @@ import cn from 'classnames';
 
 import { styles } from './styles';
 
-interface IBubbleLoaderProps {
+interface IProps {
   modifiers?: string;
   label?: string;
 }
 
-export const BubbleLoader = ({ modifiers, label = 'Loading' }: IBubbleLoaderProps) => (
+export const BubbleLoader = ({ modifiers, label = 'Loading' }: IProps) => (
   <div
     aria-label={label}
     className={cn(styles.container, modifiers)}

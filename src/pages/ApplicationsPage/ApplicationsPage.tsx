@@ -8,11 +8,11 @@ import { useApplications } from './hooks/useApplications';
 import { ApplicationCard } from './components/ApplicationCard';
 import type { IApplicationsStorage } from '@/shared/types';
 
-interface IApplicationsPageProps {
+interface IProps {
   storage?: IApplicationsStorage;
 }
 
-export const ApplicationsPage = ({ storage }: IApplicationsPageProps) => {
+export const ApplicationsPage = ({ storage }: IProps) => {
   const navigate = useNavigate();
   const { applications, isLoading } = useApplications(storage);
   const hasApplications = !isLoading && applications.length > 0;

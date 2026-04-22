@@ -104,7 +104,6 @@ exports[`ApplicationsPage > matches the empty state snapshot 1`] = `
               <div
                 aria-hidden="true"
                 class="flex shrink-0 items-center gap-1"
-                data-testid="header-progress-dots"
               >
                 <span
                   class="size-2 rounded bg-neutral-300/24"

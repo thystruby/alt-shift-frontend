@@ -1,16 +1,16 @@
 import { useNavigate } from 'react-router-dom';
-import { useCallback } from 'react';
-import { appRoutes } from '@/router/constants/appRoutes';
-import { APPLICATIONS_GOAL_COUNT } from '@/shared/constants/applications';
-import { Button } from '@/shared/components/Button';
 import { PlusIcon } from '@/assets/icons';
+import { appRoutes } from '@/router/constants/appRoutes';
+import { Button } from '@/shared/components/Button';
+import { ProgressDots } from '@/shared/components/ProgressDots';
+import { APPLICATIONS_GOAL_COUNT } from '@/shared/constants/applications';
 import { useGeneratedApplicationsCount } from '../../hooks/useGeneratedApplicationsCount';
 
-interface IApplicationGoalBannerProps {
+interface IProps {
   onClick?: () => void;
 }
 
-export const ApplicationGoalBanner = (props: IApplicationGoalBannerProps) => {
+export const ApplicationGoalBanner = (props: IProps) => {
   const { onClick } = props;
   const navigate = useNavigate();
   const { completedCount, isGoalReached } = useGeneratedApplicationsCount();
@@ -20,14 +20,6 @@ export const ApplicationGoalBanner = (props: IApplicationGoalBannerProps) => {
     onClick?.();
     navigate(appRoutes.applications.create);
   };
-
-  const renderProgressDots = useCallback(() => (
-    Array.from({ length: APPLICATIONS_GOAL_COUNT }, (_, index) => {
-      const className = index + 1 > completedCount ? 'h-2 w-8 rounded bg-neutral-300/24' : 'h-2 w-8 rounded bg-neutral-300';
-
-      return <span className={className} key={index} />;
-    })
-  ), [completedCount]);
 
   if (isGoalReached) return null;
 
@@ -56,7 +48,12 @@ export const ApplicationGoalBanner = (props: IApplicationGoalBannerProps) => {
             className='flex items-start gap-2'
             data-testid='goal-progress-bars'
           >
-            {renderProgressDots()}
+            <ProgressDots
+              completedClassName='h-2 w-8 rounded bg-neutral-300'
+              completedCount={completedCount}
+              incompletedClassName='h-2 w-8 rounded bg-neutral-300/24'
+              totalCount={APPLICATIONS_GOAL_COUNT}
+            />
           </div>
           <p className='text-center text-m leading-[28px] text-neutral-100'>
             {progressText}
