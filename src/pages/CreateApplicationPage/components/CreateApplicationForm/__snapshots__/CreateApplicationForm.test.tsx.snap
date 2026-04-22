@@ -1,0 +1,104 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CreateApplicationForm > matches the empty form snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="flex w-full flex-col gap-xl"
+    novalidate=""
+  >
+    <h1
+      class="border-b border-neutral-200 pb-l font-display text-lg font-semibold break-all leading-[44px] tracking-[-2%] text-neutral-100"
+    >
+      New application
+    </h1>
+    <div
+      class="grid w-full gap-xl lg:grid-cols-2"
+    >
+      <label
+        class="flex w-full flex-col gap-s"
+      >
+        <span
+          class="text-xs font-medium leading-[20px] text-neutral-400"
+        >
+          Job title
+        </span>
+        <input
+          aria-invalid="false"
+          class="input-field-focus w-full rounded-sm border border-neutral-500 bg-white px-l py-m leading-6 text-s shadow-input outline-none transition-colors placeholder:text-neutral-100"
+          name="jobTitle"
+          placeholder="Product manager"
+          type="text"
+        />
+      </label>
+      <label
+        class="flex w-full flex-col gap-s"
+      >
+        <span
+          class="text-xs font-medium leading-[20px] text-neutral-400"
+        >
+          Company
+        </span>
+        <input
+          aria-invalid="false"
+          class="input-field-focus w-full rounded-sm border border-neutral-500 bg-white px-l py-m leading-6 text-s shadow-input outline-none transition-colors placeholder:text-neutral-100"
+          name="company"
+          placeholder="Apple"
+          type="text"
+        />
+      </label>
+    </div>
+    <label
+      class="flex w-full flex-col gap-s"
+    >
+      <span
+        class="text-xs font-medium leading-[20px] text-neutral-400"
+      >
+        I am good as...
+      </span>
+      <input
+        aria-invalid="false"
+        class="input-field-focus w-full rounded-sm border border-neutral-500 bg-white px-l py-m leading-6 text-s shadow-input outline-none transition-colors placeholder:text-neutral-100"
+        name="keySkills"
+        placeholder="HTML, CSS and doing things in time"
+        type="text"
+      />
+    </label>
+    <div
+      class="flex flex-col items-start gap-s"
+    >
+      <label
+        class="flex w-full flex-col gap-s"
+      >
+        <span
+          class="text-xs font-medium leading-[20px] text-neutral-400"
+        >
+          Additional details
+        </span>
+        <textarea
+          aria-invalid="false"
+          class="input-field-focus w-full rounded-sm border border-neutral-500 bg-white px-l py-m leading-6 text-s shadow-input outline-none transition-colors placeholder:text-neutral-100 min-h-[240px] resize-y max-h-[500px]"
+          name="additionalDetails"
+          placeholder="Describe why you are a great fit or paste your bio"
+        />
+      </label>
+      <p
+        class="text-xs leading-[20px] text-neutral-800"
+      >
+        0/1200
+      </p>
+    </div>
+    <div
+      class="flex justify-start"
+    >
+      <button
+        aria-busy="false"
+        class="inline-flex shrink-0 items-center justify-center overflow-hidden rounded-sm font-semibold shadow-button transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-300 disabled:cursor-not-allowed cursor-pointer gap-l p-xl text-m leading-[28px] bg-green-300 text-neutral-0 hover:border-green-400 hover:bg-green-400 disabled:border-neutral-500 disabled:bg-neutral-500 disabled:text-neutral-600 w-full"
+        disabled=""
+        type="submit"
+      >
+        Generate now with AI
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

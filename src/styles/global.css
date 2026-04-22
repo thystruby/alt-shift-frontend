@@ -1,0 +1,152 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Fixel Text';
+  src: url('../assets/fonts/fixel/FixelText-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel Text';
+  src: url('../assets/fonts/fixel/FixelText-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel Text';
+  src: url('../assets/fonts/fixel/FixelText-MEdium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel Display';
+  src: url('../assets/fonts/fixel/FixelDisplay-SemiBold.woff2')
+    format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Fixel Text', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fixel Display', 'Fixel Text', ui-sans-serif, system-ui,
+    sans-serif;
+  
+  /* Font size */
+  --text-xs: 14px;
+  --text-s: 16px;
+  --text-m: 18px;
+  --text-lg: 36px;
+  --text-xl: 48px;
+
+  /* Colors */
+  --color-neutral-0: #fff;
+  --color-neutral-100: #667085;
+  --color-neutral-200: #EAECF0;
+  --color-neutral-300: #101828;
+  --color-neutral-400: #344054;
+  --color-neutral-500: #D0D5DD;
+  --color-neutral-600: #98A2B3;
+  --color-neutral-700: #F9FAFB;
+  --color-neutral-800: #475467;
+  --color-neutral-900: #F2F4F7;
+  --color-green-100: #73E2A3;
+  --color-green-200: #D3F8DF;
+  --color-green-300: #087443;
+  --color-green-400: #066239;
+  --color-green-500: #EDFCF2;
+  --color-red-100: #FDA29B;
+  --color-red-200: #FEE4E2;
+  --color-red-300: #F04438;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-s: 6px;
+  --spacing-m: 8px;
+  --spacing-l: 12px;
+  --spacing-xl: 16px;
+  --spacing-1xl: 18px;
+  --spacing-2xl: 24px; 
+  --spacing-3xl: 32px;
+  --spacing-4xl: 54px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Shadow */
+  --shadow-button: 0 1px 2px 0 rgb(16 24 40 / 5%);
+  --shadow-input: 0 1px 2px 0 rgb(16 24 40 / 5%);
+}
+
+@layer utilities {
+  .page-wrapper {
+    @apply min-h-screen bg-white px-5 pb-[32px] pt-[32px] sm:px-8 xl:px-40;
+  }
+
+  .page-container {
+    @apply mx-auto flex w-full max-w-[1120px] flex-col items-start;
+  }
+
+  .input-field-focus {
+    @apply focus:border-green-100 focus:ring-4 focus:ring-green-200;
+  }
+
+  .input-field-error-focus {
+    @apply focus:border-red-100 focus:ring-4 focus:ring-red-200;
+  }
+
+  .input-field-error {
+    @apply border-red-100;
+  }
+}
+
+@keyframes bubble-loader {
+  0%,
+  100% {
+    opacity: 0.78;
+    filter: blur(0);
+    transform: scale(0.92);
+  }
+
+  50% {
+    opacity: 1;
+    filter: blur(0.5px);
+    transform: scale(1.08);
+  }
+}
+
+:root {
+  color: #101828;
+  background: #fff;
+  font-family:
+    'Fixel Text',
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #fff;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}

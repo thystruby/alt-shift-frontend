@@ -1,0 +1,1 @@
+export { parseKeySkills } from './parseKeySkills';

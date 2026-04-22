@@ -1,0 +1,1 @@
+export { getApplicationTitle } from './getApplicationTitle';

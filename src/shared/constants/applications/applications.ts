@@ -1,0 +1,1 @@
+export const APPLICATIONS_GOAL_COUNT = 5;
